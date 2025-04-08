@@ -14,4 +14,11 @@
     <string name="kembali">Back</string>
     <string name="bagikan">Share</string>
     <string name="bagikan_template">Volume: %1$s cm \\nSurface area : %2$scm</string>
+    <string name="hitung">Count</string>
+    <string name="pilih">Choose Geometric Shape</string>
+    <string name="kubus">Cube</string>
+    <string name="balok">Recrangular</string>
+    <string name="prisma">Prisms</string>
+    <string name="bola">Sphere</string>
+    <string name="bentuk">Shape</string>
 </resources>

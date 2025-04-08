@@ -14,4 +14,11 @@
     <string name="copyright">The Geometry Calculator is an application that calculates the surface area and volume of several spatial structures such as Cubes, Blocks, Triangular Prisms, and Spheres. Created for learning purposes and academic assignments. \\n\\n© u00A9 2025 by Muhammad Ihsan. All codes and designs in this application are created for learning purposes and personal development. It is prohibited to reuse part or all of the contents of the application for commercial purposes without permission from the creator.</string>
     <string name="bagikan">Share</string>
     <string name="bagikan_template">Volume: %1$s cm \\nSurface area : %2$scm</string>
+    <string name="hitung">Count</string>
+    <string name="pilih">Choose Geometric Shape</string>
+    <string name="kubus">Cube</string>
+    <string name="balok">Recrangular</string>
+    <string name="prisma">Prisms</string>
+    <string name="bola">Sphere</string>
+    <string name="bentuk">Shape</string>
 </resources>

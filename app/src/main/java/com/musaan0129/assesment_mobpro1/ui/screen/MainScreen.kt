@@ -2,7 +2,6 @@ package com.musaan0129.assesment_mobpro1.ui.screen
 
 import android.content.Context
 import android.content.Intent
-import android.os.Message
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -30,7 +29,6 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -83,8 +81,14 @@ fun MainScreen(navContoller: NavHostController){
 
 @Composable
 fun ScreenContent(modifier: Modifier = Modifier){
-    var selectedShape by rememberSaveable { mutableStateOf("Kubus") }
-    val shapeOptions = listOf("Kubus","Balok","Prisma","Bola")
+    val bentuk = stringResource(R.string.bentuk)
+    var selectedShape by rememberSaveable { mutableStateOf(bentuk) }
+    val shapeOptions = listOf(stringResource(R.string.kubus),stringResource(R.string.balok),stringResource(R.string.prisma),stringResource(R.string.bola))
+
+    val kubus = stringResource(R.string.kubus)
+    val balok = stringResource(R.string.balok)
+    val prisma = stringResource(R.string.prisma)
+    val bola = stringResource(R.string.bola)
 
     val context = LocalContext.current
 
@@ -111,46 +115,46 @@ fun ScreenContent(modifier: Modifier = Modifier){
             modifier = Modifier.fillMaxWidth()
         )
 
-        Text("Pilih bangun ruang")
+        Text(stringResource(R.string.pilih))
         BangunDropdown(selectedShape, shapeOptions, onSelected = {selectedShape = it})
 
         when (selectedShape) {
-            "Kubus" -> {
-                InputField(label = "Sisi", value = sisi, onValueChange = {sisi = it})
+            stringResource(R.string.kubus) -> {
+                InputField(label = stringResource(R.string.sisi), value = sisi, onValueChange = {sisi = it})
             }
-            "Balok" -> {
-                InputField(label = "Panjang", value = panjang, onValueChange = {panjang = it})
-                InputField(label = "Lebar", value = lebar, onValueChange = {lebar = it})
-                InputField(label = "Tinggi", value = tinggi, onValueChange = {tinggi = it})
+            stringResource(R.string.balok) -> {
+                InputField(label = stringResource(R.string.panjang), value = panjang, onValueChange = {panjang = it})
+                InputField(label = stringResource(R.string.lebar), value = lebar, onValueChange = {lebar = it})
+                InputField(label = stringResource(R.string.tinggi), value = tinggi, onValueChange = {tinggi = it})
             }
-            "Prisma" -> {
-                InputField(label = "Alas Segitiga", value = alas, onValueChange = {alas = it})
-                InputField(label = "Tinggi Segitiga", value = tinggiAlas, onValueChange = {tinggiAlas = it})
-                InputField(label = "Tinggi", value = tinggi, onValueChange = {tinggi = it})
+            stringResource(R.string.prisma) -> {
+                InputField(label = stringResource(R.string.alas), value = alas, onValueChange = {alas = it})
+                InputField(label = stringResource(R.string.tinggiAlas), value = tinggiAlas, onValueChange = {tinggiAlas = it})
+                InputField(label = stringResource(R.string.tinggi), value = tinggi, onValueChange = {tinggi = it})
             }
-            "Bola" -> {
-                InputField(label = "Jari-jari", value = jariJari, onValueChange = {jariJari = it})
+            stringResource(R.string.bola) -> {
+                InputField(label = stringResource(R.string.jari_jari), value = jariJari, onValueChange = {jariJari = it})
             }
         }
 
 
 
-        androidx.compose.material3.Button(
+        Button(
             onClick = {
                 when (selectedShape) {
-                    "Kubus" -> {
+                    kubus -> {
                         val s = sisi.toDoubleOrNull() ?: 0.0
                         volume = (s * s * s).toString()
                         luasPermukaan = (6 * s * s).toString()
                     }
-                    "Balok" -> {
+                    balok -> {
                         val p = panjang.toDoubleOrNull() ?: 0.0
                         val l = lebar.toDoubleOrNull() ?: 0.0
                         val t = tinggi.toDoubleOrNull() ?: 0.0
                         volume = (p * l * t).toString()
                         luasPermukaan = (2 * (p * l + p * t + l * t)).toString()
                     }
-                    "Prisma" -> {
+                    prisma -> {
                         val a = alas.toDoubleOrNull() ?: 0.0
                         val ta = tinggiAlas.toDoubleOrNull() ?: 0.0
                         val tp = tinggi.toDoubleOrNull() ?: 0.0
@@ -162,7 +166,7 @@ fun ScreenContent(modifier: Modifier = Modifier){
 
 
                     }
-                    "Bola" -> {
+                    bola -> {
                         val r = jariJari.toDoubleOrNull() ?: 0.0
                         volume = ((4 / 3.0) * Math.PI * r * r * r).toString()
                         luasPermukaan = (4 * Math.PI * r * r).toString()
@@ -170,7 +174,7 @@ fun ScreenContent(modifier: Modifier = Modifier){
                 }
             }
         ) {
-            Text("Hitung")
+            Text(stringResource(R.string.hitung))
         }
 
         if (volume.isNotEmpty()) {
@@ -210,7 +214,7 @@ fun BangunDropdown(
             value = selectedOption,
             onValueChange = {},
             readOnly = true,
-            label = { Text("Bangun Ruang") },
+            label = { Text(stringResource(R.string.pilih)) },
             trailingIcon = {
                 IconButton(onClick = { expanded = !expanded }) {
                     Icon(
