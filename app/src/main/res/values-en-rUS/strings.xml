@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Geometry Calculator</string>
+    <string name="jari_jari">Radius</string>
+    <string name="panjang">Length</string>
+    <string name="lebar">Breadth</string>
+    <string name="tinggi">Height</string>
+    <string name="sisi">Side length</string>
+    <string name="intro">Forgot about how to calculate a geometric shape like a cube or cuboid? Try this geometric shape calculator,  It\'s free!!</string>
+    <string name="alas">Base</string>
+    <string name="tinggiAlas">Base height</string>
+    <string name="tentang_aplikasi">About</string>
+    <string name="copyright">The Geometry Calculator is an application that calculates the surface area and volume of several spatial structures such as Cubes, Blocks, Triangular Prisms, and Spheres. Created for learning purposes and academic assignments. \\n\\n© u00A9 2025 by Muhammad Ihsan. All codes and designs in this application are created for learning purposes and personal development. It is prohibited to reuse part or all of the contents of the application for commercial purposes without permission from the creator.</string>
+    <string name="kembali">Back</string>
+    <string name="bagikan">Share</string>
+    <string name="bagikan_template">Volume: %1$s cm \\nSurface area : %2$scm</string>
+</resources>
