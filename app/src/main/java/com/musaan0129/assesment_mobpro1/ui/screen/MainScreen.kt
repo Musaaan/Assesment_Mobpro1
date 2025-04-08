@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
+import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -32,14 +33,17 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.musaan0129.assesment_mobpro1.R
+import com.musaan0129.assesment_mobpro1.navigation.Screen
 import com.musaan0129.assesment_mobpro1.ui.theme.Assesment_Mobpro1Theme
 import kotlin.math.pow
 import kotlin.math.sqrt
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScreen(){
+fun MainScreen(navContoller: NavHostController){
     Scaffold (
         topBar = {
             TopAppBar(
@@ -50,7 +54,18 @@ fun MainScreen(){
                 colors = TopAppBarDefaults.mediumTopAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
                     titleContentColor = MaterialTheme.colorScheme.primary,
-                )
+                ),
+                actions = {
+                    IconButton(onClick = {
+                        navContoller.navigate(Screen.About.route)
+                    }) {
+                        Icon(
+                            imageVector = Icons.Outlined.Info,
+                            contentDescription = stringResource(R.string.tentang_aplikasi),
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                    }
+                }
             )
         }
     )
@@ -225,6 +240,6 @@ fun InputField(label: String, value: String, onValueChange: (String) -> Unit) {
 @Composable
 fun MainScreenPreview() {
     Assesment_Mobpro1Theme {
-        MainScreen()
+        MainScreen(rememberNavController())
     }
 }
