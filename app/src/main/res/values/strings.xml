@@ -9,6 +9,7 @@
     <string name="tinggi">Tinggi</string>
     <string name="alas">alas</string>
     <string name="tinggiAlas">Tinggi alas</string>
+    <string name="kembali">Kembali</string>
     <string name="tentang_aplikasi">Tentang Aplikasi</string>
     <string name="copyright">
     Kalkulator Bangun Ruang adalah aplikasi yang menghitung luas permukaan dan volume dari beberapa bangun ruang seperti Kubus, Balok, Prisma Segitiga, dan Bola.

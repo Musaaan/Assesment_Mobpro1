@@ -26,6 +26,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -76,19 +77,19 @@ fun MainScreen(navContoller: NavHostController){
 
 @Composable
 fun ScreenContent(modifier: Modifier = Modifier){
-    var selectedShape by remember { mutableStateOf("Kubus") }
+    var selectedShape by rememberSaveable { mutableStateOf("Kubus") }
     val shapeOptions = listOf("Kubus","Balok","Prisma","Bola")
 
-    var sisi by remember { mutableStateOf("") }
-    var panjang by remember { mutableStateOf("") }
-    var lebar by remember { mutableStateOf("") }
-    var tinggi by remember { mutableStateOf("") }
-    var alas by remember { mutableStateOf("") }
-    var tinggiAlas by remember { mutableStateOf("") }
-    var jariJari by remember { mutableStateOf("") }
+    var sisi by rememberSaveable { mutableStateOf("") }
+    var panjang by rememberSaveable { mutableStateOf("") }
+    var lebar by rememberSaveable { mutableStateOf("") }
+    var tinggi by rememberSaveable { mutableStateOf("") }
+    var alas by rememberSaveable { mutableStateOf("") }
+    var tinggiAlas by rememberSaveable { mutableStateOf("") }
+    var jariJari by rememberSaveable { mutableStateOf("") }
 
-    var volume by remember { mutableStateOf("") }
-    var luasPermukaan by remember { mutableStateOf("") }
+    var volume by rememberSaveable { mutableStateOf("") }
+    var luasPermukaan by rememberSaveable { mutableStateOf("") }
 
 
     Column (
@@ -178,7 +179,7 @@ fun BangunDropdown(
     options: List<String>,
     onSelected: (String) -> Unit
 ) {
-    var expanded by remember { mutableStateOf(false) }
+    var expanded by rememberSaveable { mutableStateOf(false) }
 
     Box {
         OutlinedTextField(
