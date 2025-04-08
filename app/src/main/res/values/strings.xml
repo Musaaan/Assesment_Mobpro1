@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Kalkulator Bangun Ruang</string>
+    <string name="intro">Lupa soal bagaimana cara menghitung sebuah bangun ruang seperti kubus atau balok? Cobalah kalkulator penghitung bangun ruang ini,
+    Gratis!!</string>
+    <string name="sisi">Sisi</string>
+    <string name="jari_jari">Jari-jari</string>
+    <string name="panjang">Panjang</string>
+    <string name="lebar">Lebar</string>
+    <string name="tinggi">Tinggi</string>
+    <string name="alas">alas</string>
+    <string name="tinggiAlas">Tinggi alas</string>
+
 </resources>

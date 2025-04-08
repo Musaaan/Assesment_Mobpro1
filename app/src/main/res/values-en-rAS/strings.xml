@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Geometry Calculator</string>
+    <string name="intro">Forgot about how to calculate a geometric shape like a cube or cuboid? Try this geometric shape calculator,  It\'s free!!</string>
+    <string name="sisi">Side length</string>
+    <string name="jari_jari">Radius</string>
+    <string name="panjang">Length</string>
+    <string name="lebar">Breadth</string>
+    <string name="tinggi">Height</string>
+    <string name="alas">Base</string>
+    <string name="tinggiAlas">Base height</string>
 </resources>
