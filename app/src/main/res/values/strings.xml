@@ -18,5 +18,7 @@
     Seluruh kode dan desain dalam aplikasi ini dibuat untuk keperluan pembelajaran dan pengembangan pribadi.
     Dilarang menggunakan ulang sebagian atau seluruh isi aplikasi untuk keperluan komersial tanpa izin dari pembuat.
     </string>
+    <string name="bagikan">Bagikan</string>
+    <string name="bagikan_template">Volume: %1$s cm\nLuas permukaan: %2$scm</string>
 
 </resources>
