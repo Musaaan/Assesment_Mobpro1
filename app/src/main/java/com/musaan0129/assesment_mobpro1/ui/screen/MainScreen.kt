@@ -2,6 +2,7 @@ package com.musaan0129.assesment_mobpro1.ui.screen
 
 import android.content.Context
 import android.content.Intent
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -10,7 +11,10 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material.icons.outlined.Info
@@ -33,6 +37,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
@@ -103,10 +108,14 @@ fun ScreenContent(modifier: Modifier = Modifier){
     var volume by rememberSaveable { mutableStateOf("") }
     var luasPermukaan by rememberSaveable { mutableStateOf("") }
 
+    val scrollState = rememberScrollState()
+
+
 
     Column (
-        modifier = modifier.fillMaxSize().padding(16.dp),
+        modifier = modifier.fillMaxSize().padding(16.dp).verticalScroll(scrollState),
         verticalArrangement = Arrangement.spacedBy(12.dp)
+
     ) {
 
         Text(
@@ -120,19 +129,39 @@ fun ScreenContent(modifier: Modifier = Modifier){
 
         when (selectedShape) {
             stringResource(R.string.kubus) -> {
+                Image(
+                    painter = painterResource(R.drawable.kubus),
+                    contentDescription = stringResource(R.string.kubus),
+                    modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp).size(150.dp)
+                )
                 InputField(label = stringResource(R.string.sisi), value = sisi, onValueChange = {sisi = it})
             }
             stringResource(R.string.balok) -> {
+                Image(
+                    painter = painterResource(R.drawable.balok),
+                    contentDescription = stringResource(R.string.balok),
+                    modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp).size(150.dp)
+                )
                 InputField(label = stringResource(R.string.panjang), value = panjang, onValueChange = {panjang = it})
                 InputField(label = stringResource(R.string.lebar), value = lebar, onValueChange = {lebar = it})
                 InputField(label = stringResource(R.string.tinggi), value = tinggi, onValueChange = {tinggi = it})
             }
             stringResource(R.string.prisma) -> {
+                Image(
+                    painter = painterResource(R.drawable.prisma),
+                    contentDescription = stringResource(R.string.prisma),
+                    modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp).size(150.dp)
+                )
                 InputField(label = stringResource(R.string.alas), value = alas, onValueChange = {alas = it})
                 InputField(label = stringResource(R.string.tinggiAlas), value = tinggiAlas, onValueChange = {tinggiAlas = it})
                 InputField(label = stringResource(R.string.tinggi), value = tinggi, onValueChange = {tinggi = it})
             }
             stringResource(R.string.bola) -> {
+                Image(
+                    painter = painterResource(R.drawable.bola),
+                    contentDescription = stringResource(R.string.bola),
+                    modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp).size(150.dp)
+                )
                 InputField(label = stringResource(R.string.jari_jari), value = jariJari, onValueChange = {jariJari = it})
             }
         }
